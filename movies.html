@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>American Movies</title>
+  <script src="movies.js"></script>
+  <style>
+    h1 {
+      padding: 10px;
+      background-color: lightblue;
+      text-align: center;
+    }
+
+    body,
+    h2 {
+      text-align: center;
+    }
+
+    #selectingSection {
+      padding-bottom: 20px;
+      background-color: lightgoldenrodyellow;
+    }
+
+    table,
+    th,
+    td {
+      padding-top: 5px;
+      border-bottom: 3px solid lightblue;
+      border-collapse: collapse;
+      padding-right: 11px;
+      font-size: 11pt;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>American Movies</h1>
+  <h2>A database of American movies released since 1900</h2>
+  <div id='selectingSection'>
+  <label for="selectYearStart">Please select a start year: </label>
+  <select id="selectYearStart"></select>
+  <script>
+    var select = document.getElementById("selectYearStart");
+    select.options[select.options.length] = new Option("All");
+    for (var i = 1900; i <= 2021; i++) {
+    select.options[select.options.length] = new Option(i, i);
+    }
+  </script>
+
+  
+  <label for="selectYearEnd">Please select an end year: </label>
+  <select id="selectYearEnd"></select>
+  <script>
+    var select = document.getElementById("selectYearEnd");
+    select.options[select.options.length] = new Option("All");
+    for (var i = 1900; i <= 2021; i++) {
+      select.options[select.options.length] = new Option(i, i);
+    }
+  </script>
+
+  <label for="selectGenre">Please select a genre: </label>
+  <select id="selectGenre">
+    <!-- Insert genres as options here -->
+    <option value="All">All</option>
+    <option value="Animated">Animated</option>
+    <option value="Family">Family</option>
+    <option value="Comedy">Comedy</option>
+    <option value="Action">Action</option>
+    <option value="Drama">Drama</option>
+    <option value="Teen">Teen</option>
+    <option value="Romance">Romance</option>
+    <option value="Fantasy">Fantasy</option>
+    <option value="Political">Political</option>
+    <option value="Thriller">Thriller</option>
+    <option value="Science Fiction">Science Fiction</option>
+    <option value="Crime">Crime</option>
+    <option value="Documentary">Documentary</option>
+    <option value="Crime">Crime</option>
+    <option value="Superhero">Superhero</option>
+    <option value="Spy">Spy</option>
+    <option value="Adventure">Adventure</option>
+    <option value="Historical">Historical</option>
+    <option value="Western">Western</option>
+    <option value="Historical">Historical</option>
+    <option value="Horror">Horror</option>
+    <option value="Dance">Dance</option>
+    <option value="Performance">Performance</option>
+    <option value="Live Action">Live Action</option>
+    <option value="Dance">Dance</option>
+  </select>
+  <button id="click">Go</button>
+
+  </div>
+
+
+  <div id='list'>
+    <table id="movieTable">
+      
+        <tr>
+          <th>Year</th>
+          <th>Title</th>
+          <th>Genres</th>
+          <th>Cast</th>
+        </tr>
+      
+    </table>
+  </div>
+
+
+</body>
+
+</html>
